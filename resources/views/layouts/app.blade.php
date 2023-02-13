@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        <h1>Dc Comics list </h1>
+        <h1>Dc Comics</h1>
     </header>
     <main>
         @yield('main-content')

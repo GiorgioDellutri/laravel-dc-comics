@@ -2,7 +2,7 @@
 
 @section('main-content')
     <div class="container-fluid">
-        <table class="table">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">id</th>
@@ -22,6 +22,7 @@
                         <td>{{ $comic->type }}</td>
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->price }}</td>
+                        <td><a href="{{ route('comics.show', $comic->id) }}" class="btn btn-sm btn-success">Show</a></td>
                     </tr>
                 </tbody>
             @endforeach

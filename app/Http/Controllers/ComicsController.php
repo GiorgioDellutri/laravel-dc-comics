@@ -27,6 +27,7 @@ class ComicsController extends Controller
     public function create()
     {
         //
+        dd('test');
     }
 
     /**

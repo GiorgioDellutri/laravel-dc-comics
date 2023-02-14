@@ -2,6 +2,11 @@
 
 @section('main-content')
     <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-end">
+                <a class="btn btn-warning my-2 mx-2" href="{{ route('comics.create') }}">Create a new Comic</a>
+            </div>
+        </div>
         <table class="table table-hover">
             <thead>
                 <tr>

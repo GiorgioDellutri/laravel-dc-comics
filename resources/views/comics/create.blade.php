@@ -4,10 +4,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-4 m-auto">
-                <form>
+                <form action="{{ route('comics.store') }}" method="POST">
+                    @csrf
                     <div class="mb-3">
                         <label class="form-label">Thumb</label>
-                        <input type="text" class="form-control" id="title" name="title">
+                        <input type="text" class="form-control" id="title" name="thumb">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Title</label>
@@ -15,25 +16,25 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label d-block">Description</label>
-                        <textarea name="description" id="" cols="80" rows="5"></textarea>
+                        <textarea name="description" class="form-control"></textarea>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Price</label>
-                        <input type="text" class="form-control" id="title" name="title">
+                        <input type="text" class="form-control" id="title" name="price">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Series</label>
-                        <input type="text" class="form-control" id="title" name="title">
+                        <input type="text" class="form-control" id="title" name="series">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Type</label>
-                        <input type="text" class="form-control" id="title" name="title">
+                        <input type="text" class="form-control" id="title" name="type">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Comic name</label>
-                        <input type="text" class="form-control" id="title" name="title">
+                        <label class="form-label">Sale date</label>
+                        <input type="text" class="form-control" id="title" name="sale_date">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-warning">Submit</button>
                 </form>
             </div>
         </div>

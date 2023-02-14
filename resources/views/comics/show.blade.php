@@ -10,6 +10,10 @@
                         <h3 class="text-center">Title: {{ $comic->title }}</h3>
                         <p>Series: {{ $comic->series }}</p>
                         <p>Description: {{ $comic->description }}</p>
+                        <p>Series: {{ $comic->series }}</p>
+                        <p>Price: {{ $comic->price }}</p>
+                        <p>Type: {{ $comic->type }}</p>
+                        <p>Sale date: {{ $comic->sale_date }}</p>
                     </div>
                 </div>
             </div>

@@ -91,16 +91,15 @@ class ComicsController extends Controller
         //
         $formData = $request->all();
         $comic = Comic::findOrFail($id);
-        // $comic->thumb = $formData['thumb'];
-        // $comic->title = $formData['title'];
-        // $comic->description = $formData['description'];
-        // $comic->price = $formData['price'];
-        // $comic->series = $formData['series'];
-        // $comic->sale_date = $formData['sale_date'];
-        // $comic->type = $formData['type'];
-        // $comic->save();
+        $comic->thumb = $formData['thumb'];
+        $comic->title = $formData['title'];
+        $comic->description = $formData['description'];
+        $comic->price = $formData['price'];
+        $comic->series = $formData['series'];
+        $comic->sale_date = $formData['sale_date'];
+        $comic->type = $formData['type'];
+        $comic->save();
 
-        $comic->update($formData);
 
         return redirect()->route('comics.show', $comic->id);
     }
@@ -108,11 +107,13 @@ class ComicsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
         //
+        $comic->delete();
+        return redirect()->route('comics.index');
     }
 }

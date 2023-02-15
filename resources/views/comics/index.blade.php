@@ -29,8 +29,13 @@
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->price }}</td>
                         <td>
-                            <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-sm btn-success m-2">Show</a>
-                            <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-sm btn-dark m-2">Edit</a>
+                            <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-sm btn-success ">Show</a>
+                            <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-sm btn-dark mx-2">Edit</a>
+                            <form class="d-inline" action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-sm btn-danger">Delete</button>
+                            </form>
                         </td>
                         </td>
                     </tr>

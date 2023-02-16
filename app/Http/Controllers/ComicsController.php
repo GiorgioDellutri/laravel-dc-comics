@@ -40,6 +40,28 @@ class ComicsController extends Controller
     {
         //
         $data = $request->all();
+
+        $request->validate(
+            [
+                'thumb' => 'required|url|min:4',
+                'title' => 'required|min:5|max:100',
+                'description' => 'required',
+                'price' => 'required',
+                'series' => 'required',
+                'type' => 'string|max:100|nullable',
+                'sale_date' => 'required|date|before_or_equal:today',
+            ],
+            [
+                'thumb.required' => 'Il campo "thumb" è obbligatorio (inserisci un URL)',
+                'title.required' => 'Il campo "title" è obbligatorio',
+                'description,required' => 'Il campo "descrizione" è obbligatorio',
+                'price.required' => 'Il campo "price" è obbligatorio',
+                'series.required' => 'Il campo "series" è obbligatorio',
+                'price.required' => 'Il campo "price" è obbligatorio',
+                'sale_date.required' => 'Il campo "sale date" è obbligatorio, inserisci un formato valido (aaaa/mm/gg)',
+            ]
+        );
+
         $newComic = new Comic();
         $newComic->thumb = $data['thumb'];
         $newComic->title = $data['title'];

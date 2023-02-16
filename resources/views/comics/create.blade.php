@@ -1,6 +1,23 @@
 @extends('layouts.app')
 
 @section('main-content')
+    <div class="container">
+        <div class="row">
+            <div class="col-12 m-auto">
+                @if ($errors->any())
+                    <div class=" alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>
+                                    {{ $error }}
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-4 m-auto">

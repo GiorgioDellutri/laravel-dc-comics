@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        <h1 class="m-3">Dc Comics</h1>
+        @include('partials.navbar')
     </header>
     <main>
         @yield('main-content')

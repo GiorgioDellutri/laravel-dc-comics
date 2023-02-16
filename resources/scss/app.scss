@@ -1,1 +1,19 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+
+nav {
+    display: flex;
+    align-items: center;
+
+    a {
+        display: flex;
+        align-items: center;
+
+        img {
+            margin-right: 20px;
+            height: 80px;
+            width: 80px;
+        }
+    }
+
+}
